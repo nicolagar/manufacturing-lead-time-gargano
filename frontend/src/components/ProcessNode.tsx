@@ -1,14 +1,23 @@
 import { memo } from 'react';
 import type { NodeProps } from '@xyflow/react';
 
-export default memo(function ProcessNode({ data }: NodeProps) {
+type ProcessNodeData = {
+  label: string;
+  es: number | string;
+  ef: number | string;
+  duration: number | string;
+};
+
+export default memo(function ProcessNode({ data }: NodeProps<{ label: string; es: number | string; ef: number | string; duration: number | string }>) {
+  const d = data as ProcessNodeData;
+
   return (
     <div className="rf-node">
-      <div className="title">{data.label}</div>
+      <div className="title">{d.label}</div>
       <div className="meta">
-        <span>Start {data.es}</span>
-        <span>Dur {data.duration}</span>
-        <span>End {data.ef}</span>
+        <span>Start {d.es}</span>
+        <span>Dur {d.duration}</span>
+        <span>End {d.ef}</span>
       </div>
     </div>
   );
