@@ -1,0 +1,5 @@
+{
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \u001b[35m\"/mnt/data/nested-pert-option1-fullstack-v4/tests/test_f07_visual_generic.py\"\u001b[0m, line \u001b[35m18\u001b[0m, in \u001b[35m<module>\u001b[0m\n    assert \u001b[1;31mf0705['x0'] > f0704_box['x0']\u001b[0m, 'F07_05 must be right of F07_04'\n           \u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\n\u001b[1;35mAssertionError\u001b[0m: \u001b[35mF07_05 must be right of F07_04\u001b[0m\n"
+}
