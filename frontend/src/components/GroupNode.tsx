@@ -1,8 +1,19 @@
 import { memo } from 'react';
 import type { NodeProps } from '@xyflow/react';
 
-export default memo(function GroupNode({ data, selected }: NodeProps) {
+type GroupNodeData = {
+  label: string;
+  width: number;
+  height: number;
+  critical?: boolean;
+  es: number | string;
+  ef: number | string;
+  duration: number | string;
+};
+
+export default memo(function GroupNode({ data, selected }: NodeProps<GroupNodeData>) {
   const critical = Boolean(data.critical);
+
   return (
     <div
       className={`group-node ${critical ? 'critical' : ''}`}
