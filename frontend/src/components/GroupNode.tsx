@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import type { NodeProps } from '@xyflow/react';
+import type { Node, NodeProps } from '@xyflow/react';
 
 type GroupNodeData = {
   label: string;
@@ -11,7 +11,9 @@ type GroupNodeData = {
   duration: number | string;
 };
 
-export default memo(function GroupNode({ data, selected }: NodeProps<GroupNodeData>) {
+type GroupFlowNode = Node<GroupNodeData, 'group'>;
+
+export default memo(function GroupNode({ data, selected }: NodeProps<GroupFlowNode>) {
   const critical = Boolean(data.critical);
 
   return (
